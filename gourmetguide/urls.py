@@ -21,4 +21,5 @@ from gourmetguide import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('recipes/', views.recipes, name='recipes'),
+    path('recipes/addrecipe/', views.add_recipe, name='add-recipe'),
 ]
