@@ -17,8 +17,8 @@ def add_recipe(request):
     serializer = RecipeSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return JsonResponse({'message': 'Recipe added successfully!', 'recipe': serializer.data}, status=status.HTTP_201_CREATED)
-    return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return JsonResponse({'message': 'Recipe added successfully!', 'recipes': serializer.data}, status=201)
+    return JsonResponse(serializer.errors, status=400)
 
 @api_view(['GET'])
 def recipe_detail(request, recipeId):
