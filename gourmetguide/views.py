@@ -24,7 +24,7 @@ def add_recipe(request):
 def recipe_detail(request, recipeId):
     data = get_object_or_404(Recipe, id=recipeId)
     serializer = RecipeSerializer(data)
-    return JsonResponse({'recipe': serializer.data}, status=status.HTTP_200_OK)
+    return JsonResponse({'recipe': serializer.data}, status=201)
 
 @api_view(['PUT'])
 def recipe_update(request, recipeId):
@@ -32,8 +32,9 @@ def recipe_update(request, recipeId):
     serializer = RecipeSerializer(recipe, data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return JsonResponse({'message': 'Recipe updated successfully!', 'recipe': serializer.data}, status=status.HTTP_200_OK)
+        return JsonResponse({'message': 'Recipe updated successfully!', 'recipes': serializer.data}, status=201)
     return JsonResponse(serializer.errors, status=400)
+
 
 @api_view(['DELETE'])
 def recipe_delete(request, recipeId):
