@@ -34,3 +34,9 @@ def recipe_update(request, recipeId):
         serializer.save()
         return JsonResponse({'message': 'Recipe updated successfully!', 'recipe': serializer.data}, status=status.HTTP_200_OK)
     return JsonResponse(serializer.errors, status=400)
+
+@api_view(['DELETE'])
+def recipe_delete(request, recipeId):
+    recipe = get_object_or_404(Recipe, id=recipeId)
+    recipe.delete()
+    return JsonResponse({'message': 'Recipe deleted successfully!'}, status=204)
