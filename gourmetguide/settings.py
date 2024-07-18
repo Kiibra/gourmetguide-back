@@ -55,7 +55,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173', 
-    'http://localhost:3000',
+    'http://3.141.39.147:8000',
     'http://gourmetguide-web.s3-website.us-east-2.amazonaws.com'
 ] 
 
