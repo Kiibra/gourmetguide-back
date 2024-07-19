@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,11 +30,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['3.141.39.147', '127.0.0.1', '0.0.0.0', 'localhost']
 
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Application definition
 
 INSTALLED_APPS = [
     'corsheaders',
+    'cloudinary',
+    'cloudinary_storage',
     'rest_framework',
     'gourmetguide',
     'django.contrib.admin',
