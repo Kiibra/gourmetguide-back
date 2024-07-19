@@ -30,11 +30,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['3.141.39.147', '127.0.0.1', '0.0.0.0', 'localhost']
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-}
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_URL = '/media/'
